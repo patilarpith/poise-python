@@ -25,7 +25,7 @@ issues_url "https://github.com/poise/poise-python/issues" if defined?(issues_url
 license "Apache-2.0"
 depends "poise", "~> 2.7"
 depends "poise-languages", "~> 2.0"
-chef_version "< 15", ">= 12.14" if defined?(chef_version)
+chef_version "< 15", ">= 12.16" if defined?(chef_version)
 supports "ubuntu"
 supports "debian"
 supports "redhat"
