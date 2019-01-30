@@ -35,7 +35,7 @@ module PoisePython
           '~> 6.0' => %w{python3.1 python2.6 python2.5},
         },
         ubuntu: {
-          '18.04' => %w{python3.6 python2.7},
+          '18.04' => %w{python3.7 python2.7},
           '16.04' => %w{python3.5 python2.7},
           '14.04' => %w{python3.4 python2.7},
           '12.04' => %w{python3.2 python2.7},
@@ -57,10 +57,10 @@ module PoisePython
 
       def install_python
         install_system_packages
-        if node.platform_family?('debian') && system_package_name == 'python3.6'
+        if node.platform_family?('debian') && system_package_name == 'python3.7'
           # Ubuntu 18.04 and Debian 10 have some weird dependency fuckery going on.
           _options = options
-          package %w{python3.6-venv python3.6-distutils} do
+          package %w{python3.7-venv python3.7-distutils} do
             action(:upgrade) if _options['package_upgrade']
           end
         end
